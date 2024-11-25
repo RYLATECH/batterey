@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
+    /* تنظیمات کلی صفحه */
     body, html {
       margin: 0;
       padding: 0;
@@ -29,14 +30,14 @@
       z-index: 1;
     }
 
+    /* استایل کارت شیشه‌ای */
     .glass-card {
       display: flex;
-      flex-direction: column; /* پیش‌فرض موبایل */
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       width: 90%; /* عرض کارت */
-      max-width: 800px; /* حداکثر عرض برای دسکتاپ */
-      height: auto; /* ارتفاع کارت خودکار برای موبایل */
+      max-width: 400px; /* حداکثر عرض کارت */
       padding: 20px;
       border-radius: 15px;
       background: rgba(255, 255, 255, 0.1);
@@ -50,8 +51,8 @@
     }
 
     .glass-card .gif-container {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
       margin-bottom: 20px;
     }
 
@@ -62,7 +63,7 @@
     }
 
     .glass-card .content {
-      text-align: center; /* متن وسط‌چین برای موبایل */
+      text-align: center;
     }
 
     .glass-card h1 {
@@ -102,22 +103,25 @@
       box-shadow: 0 6px 15px rgba(0, 119, 181, 0.5);
     }
 
-    /* تنظیمات مخصوص دسکتاپ */
-    @media (min-width: 768px) {
+    /* تنظیمات برای دسکتاپ */
+    @media (min-width: 1024px) {
       .glass-card {
-        flex-direction: row; /* چینش افقی */
+        flex-direction: row;
+        width: 70%; /* عرض کارت برای دسکتاپ */
+        max-width: 800px;
         height: 300px;
+        padding: 30px;
       }
 
       .glass-card .gif-container {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 0;
+        width: 150px;
+        height: 150px;
         margin-right: 20px;
+        margin-bottom: 0;
       }
 
       .glass-card .content {
-        text-align: left; /* متن چپ‌چین برای دسکتاپ */
+        text-align: left;
       }
 
       .glass-card h1 {
@@ -125,6 +129,28 @@
       }
 
       .glass-card p {
+        font-size: 1.2em;
+      }
+    }
+
+    /* تنظیمات برای موبایل‌های کوچک */
+    @media (max-width: 480px) {
+      .glass-card h1 {
+        font-size: 1.2em;
+      }
+
+      .glass-card p {
+        font-size: 0.9em;
+      }
+
+      .glass-card .gif-container {
+        width: 80px;
+        height: 80px;
+      }
+
+      .glass-card .btn-container a {
+        width: 40px;
+        height: 40px;
         font-size: 1.2em;
       }
     }
